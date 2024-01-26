@@ -17,7 +17,7 @@ class Movies:
 
 
 def movies() -> List[Movies]:
-    with open("C:\\Users\\Almahdi\\Desktop\\RSP\\SVD\\src\\movies.csv", "r", encoding="utf-8") as file:
+    with open("C:\\Users\\you\\Desktop\\RSP\\SVD\\src\\movies.csv", "r", encoding="utf-8") as file:
         reader = csv.DictReader(file, fieldnames=['movieId', 'title', 'genres'])
         next(reader)  # skip header
         return [Movies(int(row["movieId"]), row["title"], row["genres"]) for row in reader]
@@ -31,7 +31,7 @@ class Ratings:
 
 
 def ratings() -> List[Ratings]:
-    with open("C:\\Users\\Almahdi\\Desktop\\RSP\\SVD\\src\\ratings.csv", "r", encoding="utf-8") as file:
+    with open("C:\\Users\\you\\Desktop\\RSP\\SVD\\src\\ratings.csv", "r", encoding="utf-8") as file:
         reader = csv.DictReader(file, fieldnames=['userId', 'movieId', 'rating'])
         next(reader)  # skip header
         return [Ratings(int(row["userId"]), int(row["movieId"]), float(row["rating"])) for row in reader]
@@ -163,7 +163,7 @@ def main():
 
     recommended_films_to_user_i([list_of_movies[i] for i, _ in sorterid])
 
-    print("Done! look at C:\\Users\\Almahdi\\Desktop\\RSP\\SVD\\code\\recommended_films.csv")
+    print("Done! look at C:\\Users\\you\\Desktop\\RSP\\SVD\\code\\recommended_films.csv")
 
 
 def recommended_films_to_user_i(movies_list):
